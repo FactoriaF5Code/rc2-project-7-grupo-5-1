@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import Header from "./Header/Header"
-import './App.css'
-import MyModal from './Modal/Modal'
+import { useState } from "react";
+import ButtonAñadir from "./Buttons/ButtonAñadir.jsx";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
+
+import MyModal from "./Modal/Modal";
+
+import Header from "./Header/Header.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <Header />
-      <MyModal />
+      <Router>
+        <Header />
+        <ButtonAñadir />
+        <MyModal />
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
