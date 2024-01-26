@@ -32,16 +32,7 @@ function MyModal() {
         <div>
             <input id="link" type="text" placeholder='Enlace' onChange={handleLinkChange} />
         </div>
-        <div>
-            <select id="folder" value={folder} onChange={handleFolderChange}>
-              <option value="html-y-css">HTML Y CSS</option>
-              <option value="javascript">JavaScript</option>
-              <option value="java">Java</option>
-                <option value="react">React</option>
-
-            </select>
-        </div>
-        <button onClick={() => setModalIsOpen(false)}>Close</button>
+        <button onClick={() => setModalIsOpen(false)}>Subir archivo</button>
       </Modal>
     </div>
   );
