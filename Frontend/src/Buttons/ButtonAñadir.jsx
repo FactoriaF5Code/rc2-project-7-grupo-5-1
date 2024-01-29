@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AddButton = () => {
+function AddButton({ onOpenModal }) {
   return (
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <button
+      <button onClick={onOpenModal}
         style={{
           backgroundColor: 'blue',
           color: 'white',
