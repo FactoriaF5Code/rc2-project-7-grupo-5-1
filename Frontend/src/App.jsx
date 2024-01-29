@@ -3,7 +3,7 @@ import ButtonAñadir from "./Buttons/ButtonAñadir.jsx";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
-import MyModal from "./Modal/Modal";
+import MyModal from "./Modal/Modal.jsx";
 
 import Header from "./Header/Header.jsx";
 
