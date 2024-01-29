@@ -100,7 +100,19 @@ header {
 .search-input {
     border: none;
     border-radius: 1rem;
-    font-size: 1.2rem;
-    width: 30rem;
-    text-align: center;
+    width: 70rem;
+    height: 3rem;
+    text-align:left;
+    padding-left: 50px;
+    text-transform: uppercase;
+    
+    
+      
+}
+
+.logo {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    gap: 30px;
 }

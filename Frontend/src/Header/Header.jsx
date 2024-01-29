@@ -3,17 +3,22 @@ import "./Header.css";
 function Header() {
   return (
     <header>
-      <label for="burger" class="burger">
+      <div className="logo" >
+          <label for="burger" class="burger">
         <input id="burger" type="checkbox"></input>
         <span></span>
         <span></span>
         <span></span>
       </label>
-      <h1>Header</h1>
-      <div className="search-container">
+      
+      <img src = "../asset/INFO CODER LOGO OK.png" alt="INFO CODER" />
+      
+      </div>
+            <div className="search-container">
+
         <input class="search-input" type="search" placeholder="Buscar"></input>
       </div>
-    </header>
+          </header>
   );
 }
 
