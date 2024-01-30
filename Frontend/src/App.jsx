@@ -76,8 +76,8 @@ function App() {
         <AddButton onOpenModal={handleOpenModal} />
         <MyModal isOpen={isModalOpen} onCloseModal={handleCloseModal} />
         {data.map((item, index) => (
-          <div key={index}>
-            <h2>{item.title}</h2>
+          <div className='barButtom' key={index}>
+            <p>{item.title}</p>
             <p><a href={item.url} target="_blank" rel="noopener noreferrer">{item.url}</a></p>
           </div>
         ))}

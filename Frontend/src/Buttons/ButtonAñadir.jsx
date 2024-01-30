@@ -12,6 +12,7 @@ function AddButton({ onOpenModal }) {
           borderRadius: '5px',
           cursor: 'pointer',
           width: '10%',
+          fontSize: '1.8rem',
         }}
       >
         Añadir
