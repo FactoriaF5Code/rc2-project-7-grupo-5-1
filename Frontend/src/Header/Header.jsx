@@ -1,5 +1,5 @@
 import "./Header.css";
-
+import Logo from "../asset/INFO CODER LOGO OK.png";
 function Header() {
   return (
     <header>
@@ -11,7 +11,7 @@ function Header() {
         <span></span>
       </label>
       
-      <img src = "../asset/INFO CODER LOGO OK.png" alt="INFO CODER" />
+      <img className="imgLogo" src = {Logo} alt="INFO CODER"  />
       
       </div>
             <div className="search-container">

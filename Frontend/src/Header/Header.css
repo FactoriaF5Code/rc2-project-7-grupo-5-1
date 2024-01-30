@@ -92,6 +92,10 @@ header {
   left: 5px;
 }
 
+.imgLogo {
+  width: 100px;
+  height:50px;
+}
 .search-container {
     padding: .1rem;
     
