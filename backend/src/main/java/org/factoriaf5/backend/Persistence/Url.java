@@ -7,18 +7,26 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name="url")
+@Table(name = "urls")
 public class Url {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String url;
+    private Long id; 
+
+    
     private String title;
+    private String url;
 
     public Url() {
     }
 
-    public Url(String title) {
+    public Url(String url, String title) {
+        this.url = url;
         this.title = title;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getUrl() {
