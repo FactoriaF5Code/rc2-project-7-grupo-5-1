@@ -69,6 +69,20 @@ function App() {
 };
   };
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:8080/urls/${id}`);
+      if (response.status === 200) {
+        setData(data.filter((item) => item.id !== id));
+      } else {
+        alert("Hubo un error al eliminar los datos");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Hubo un error al eliminar los datos");
+    }
+  };
+
   return (
     <>
       <Router>
@@ -76,11 +90,31 @@ function App() {
         <AddButton onOpenModal={handleOpenModal} />
         <MyModal isOpen={isModalOpen} onCloseModal={handleCloseModal} />
         {data.map((item, index) => (
-          <div className='barButtom' key={index}>
-            <p>{item.title}</p>
-            <p><a href={item.url} target="_blank" rel="noopener noreferrer">{item.url}</a></p>
-          </div>
-        ))}
+  <div className="barButtom" key={index}>
+    <h2>{item.title}</h2>
+    <p>
+      <a href={item.url} target="_blank" rel="noopener noreferrer">
+        {item.url}
+      </a>
+    </p>
+    <button
+      className="noselect"
+      onClick={() => handleDelete(item.id)}
+    >
+      <span className="text">Eliminar</span>
+      <span className="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+))}
       </Router>
     </>
   );

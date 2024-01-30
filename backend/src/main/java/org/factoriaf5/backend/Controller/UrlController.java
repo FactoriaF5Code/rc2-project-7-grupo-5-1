@@ -6,7 +6,9 @@ import java.util.List;
 import org.factoriaf5.backend.Persistence.Url;
 import org.factoriaf5.backend.Persistence.UrlRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,17 +27,22 @@ public class UrlController {
     public UrlResponse createUrl(@RequestBody UrlRequest request) {
         Url url = new Url(request.getTitle(), request.getUrl());
         Url savedUrl = repository.save(url);
-        return new UrlResponse(savedUrl.getTitle(), savedUrl.getUrl());
+        return new UrlResponse(savedUrl.getId(), savedUrl.getTitle(), savedUrl.getUrl());
     }
 
     @GetMapping("/urls")
-    public List<UrlResponse> getUrls() {
-        List<UrlResponse> urls = new ArrayList<UrlResponse>();
-        List<Url> urlInDatabase = repository.findAll();
-        for (Url urlItem : urlInDatabase) {
-            urls.add(new UrlResponse(urlItem.getTitle(), urlItem.getUrl()));
-        }
-        return urls;
+public List<UrlResponse> getUrls() {
+    List<UrlResponse> urls = new ArrayList<UrlResponse>();
+    List<Url> urlInDatabase = repository.findAll();
+    for (Url urlItem : urlInDatabase) {
+        urls.add(new UrlResponse(urlItem.getId(), urlItem.getTitle(), urlItem.getUrl()));
+    }
+    return urls;
+}
+
+    @DeleteMapping("/urls/{id}")
+    public void deleteUrl(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 
 }
