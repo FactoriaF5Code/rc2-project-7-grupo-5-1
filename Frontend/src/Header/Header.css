@@ -1,27 +1,8 @@
-:root{
-  
---colorPrimario: ;
---colorSecundario: ;
---colorTerciario: ; 
 
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none; 
-  text-decoration: none;
-  font-family: Roboto;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
-html {
-  font-size: 62.5%;
-}
+
+
+
 header {
     background-color: black;
     color: white;
@@ -36,7 +17,7 @@ header {
   position: relative;
   width: 40px;
   height: 30px;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
   display: block;
 }
@@ -93,8 +74,9 @@ header {
 }
 
 .imgLogo {
-  width: 100px;
+  width: 180px;
   height:50px;
+  
 }
 .search-container {
     padding: .1rem;
@@ -118,5 +100,7 @@ header {
     align-items: center;
     flex-direction: row;
     display: flex;
-    gap: 30px;
+    gap: 70px;
+    justify-content: space-between;
+    
 }

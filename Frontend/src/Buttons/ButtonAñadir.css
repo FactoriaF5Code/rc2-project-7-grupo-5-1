@@ -1,0 +1,19 @@
+.bt {
+    background:#1A8FDD;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-Radius: 5px;
+    cursor: pointer;
+    width: 170px;
+    font-size: 1.8rem;
+    margin-top: 20px;
+
+}
+
+.button-box {
+    margin-right: 20%;
+    
+   
+
+}
