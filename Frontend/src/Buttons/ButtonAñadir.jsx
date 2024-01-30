@@ -5,7 +5,7 @@ function AddButton({ onOpenModal }) {
     <div style={{ textAlign: 'center', marginTop: '20px' }}>
       <button onClick={onOpenModal}
         style={{
-          backgroundColor: 'blue',
+          backgroundColor: '#1A8FDD',
           color: 'white',
           padding: '10px 20px',
           border: 'none',
