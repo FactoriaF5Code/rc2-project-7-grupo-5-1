@@ -2,6 +2,16 @@ html {
   font-size: 62.5%;
 }
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to top, #000000, #808080);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +22,7 @@ html {
 }
 
 .barButtom {
-  background-color: aqua;
+  background-color: white;
   border: 1px solid black;
   padding: 15px;
   text-align: center;
@@ -28,7 +38,9 @@ html {
   place-items: center;
   border-radius: 5px;
   position: relative;
+  
 }
+
 
 .url-container {
   color: black;
@@ -38,6 +50,8 @@ html {
   flex-direction: row;
   gap: 20px;
   place-items: center;
+  width: 70%;
+  
 }
 
 .buton-delete {
