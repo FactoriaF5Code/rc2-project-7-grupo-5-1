@@ -1,100 +1,108 @@
-
 html {
-    font-size: 62.5%;
-  }
+  font-size: 62.5%;
+}
 
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none; 
-    text-decoration: none;
-    font-family: Roboto;
-   
-  
-    
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: Roboto;
+}
 
 .barButtom {
-    background-color: aqua;
-    border: 1px solid black;
-    color: black;
-    padding: 15px;
-    text-align: center;
-    display: flex;
-    width: 70%;
-    height: 8px;
-    align-items: baseline;
-    flex-direction: row;
-    gap: 20px;
-    margin-top: 30px;
-    margin-left: 50px;
-    font-size: 15px;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 0.5px;
-    
+  background-color: aqua;
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  width: 70%;
+  height: 8px;
+  align-items: baseline;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 15px;
+  place-items: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.url-container {
+  color: black;
+  text-align: center;
+  display: flex;
+  height: 8px;
+  flex-direction: row;
+  gap: 20px;
+  place-items: center;
+}
+
+.buton-delete {
+  margin-left: 102%;
 }
 
 .noselect {
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 32px;
   cursor: pointer;
   display: flex;
   align-items: center;
   background: red;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   background: #e62222;
   margin-left: auto;
-  }
- 
- .noselect, .noselect span {
+}
+
+.noselect,
+.noselect span {
   transition: 200ms;
- }
- 
- .noselect .text {
-  transform: translateX(35px);
+}
+
+.noselect .text {
+  transform: translateX(55px);
   color: white;
   font-weight: bold;
- }
- 
- .noselect .icon {
+}
+
+.noselect .icon {
   position: absolute;
   border-left: 1px solid #c41b1b;
-  transform: translateX(110px);
-  height: 40px;
-  width: 40px;
+  transform: translateX(150px);
+  height: 30px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
- }
- 
- .noselect svg {
+}
+
+.noselect svg {
   width: 15px;
   fill: #eee;
- }
- 
- .noselect:hover {
+}
+
+.noselect:hover {
   background: #ff3636;
- }
- 
- .noselect:hover .text {
+}
+
+.noselect:hover .text {
   color: transparent;
- }
- 
- .noselect:hover .icon {
-  width: 150px;
+}
+
+.noselect:hover .icon {
+  width: 200px;
   border-left: none;
   transform: translateX(0);
- }
- 
- .noselect:focus {
+}
+
+.noselect:focus {
   outline: none;
- }
- 
- .noselect:active .icon svg {
+}
+
+.noselect:active .icon svg {
   transform: scale(0.8);
- }
+}
