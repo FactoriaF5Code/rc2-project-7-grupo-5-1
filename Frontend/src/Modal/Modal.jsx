@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
-import './Modal.css';
+import React, { useState } from "react";
+import Modal from "react-modal";
+import "./Modal.css";
 
-import axios from 'axios'; 
-
+import axios from "axios";
 
 function MyModal({ isOpen, onCloseModal }) {
   const [description, setDescription] = useState("");
@@ -18,22 +17,27 @@ function MyModal({ isOpen, onCloseModal }) {
   };
 
   const handleSubmit = async () => {
-    const urlPattern = new RegExp('^(https?:\\/\\/)'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name and extension
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?'+ // port
-    '(\\/[-a-z\\d%_.~+]*)*'+ // path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    const urlPattern = new RegExp(
+      "^(https?:\\/\\/)" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name and extension
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?" + // port
+        "(\\/[-a-z\\d%_.~+]*)*" + // path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
 
-  if (!urlPattern.test(link)) {
-    alert("Por favor, introduce una URL válida que comience con http:// o https://");
-    return;
-  }
+    if (!urlPattern.test(link)) {
+      alert(
+        "Por favor, introduce una URL válida que comience con http:// o https://"
+      );
+      return;
+    }
     try {
-      const response = await axios.post('http://localhost:8080/urls', {
+      const response = await axios.post("http://localhost:8080/urls", {
         title: description,
-        url: link
+        url: link,
       });
       console.log(response.data);
       onCloseModal();
@@ -45,14 +49,29 @@ function MyModal({ isOpen, onCloseModal }) {
 
   return (
     <div>
-      <Modal  isOpen={isOpen} onRequestClose={onCloseModal} ariaHideApp={false} className="my-modal-class">
-        
-            <input id="description" type="text" placeholder='Titulo' onChange={handleDescriptionChange} />
-       
-        
-            <input id="link" type="text" placeholder='Enlace' onChange={handleLinkChange} />
-       
-        <button className='button_modal' onClick={handleSubmit}>Subir archivo</button>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onCloseModal}
+        ariaHideApp={false}
+        className="my-modal-class"
+      >
+        <input
+          id="description"
+          type="text"
+          placeholder="Descripción"
+          onChange={handleDescriptionChange}
+        />
+
+        <input
+          id="link"
+          type="text"
+          placeholder="Copia tu enlace"
+          onChange={handleLinkChange}
+        />
+
+        <button className="button_modal" onClick={handleSubmit}>
+          Subir archivo
+        </button>
       </Modal>
     </div>
   );

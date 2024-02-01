@@ -79,7 +79,7 @@ html, body {
 
 .noselect .text {
   transform: translateX(55px);
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -96,7 +96,7 @@ html, body {
 
 .noselect svg {
   width: 15px;
-  fill: #eee;
+  fill: #000000;
 }
 
 .noselect:hover {
