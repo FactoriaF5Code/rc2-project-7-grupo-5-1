@@ -64,8 +64,8 @@ function MyModal({ isOpen, onCloseModal }) {
 
         <input
           id="link"
-          type="text"
-          placeholder="Copia tu enlace"
+          type="text" 
+          placeholder="Copia tu enlace" 
           onChange={handleLinkChange}
         />
 
