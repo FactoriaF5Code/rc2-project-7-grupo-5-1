@@ -45,14 +45,14 @@ function MyModal({ isOpen, onCloseModal }) {
 
   return (
     <div>
-      <Modal isOpen={isOpen} onRequestClose={onCloseModal} ariaHideApp={false} className="my-modal-class">
-        <div>
+      <Modal  isOpen={isOpen} onRequestClose={onCloseModal} ariaHideApp={false} className="my-modal-class">
+        
             <input id="description" type="text" placeholder='Titulo' onChange={handleDescriptionChange} />
-        </div>
-        <div>
+       
+        
             <input id="link" type="text" placeholder='Enlace' onChange={handleLinkChange} />
-        </div>
-        <button onClick={handleSubmit}>Subir archivo</button>
+       
+        <button className='button_modal' onClick={handleSubmit}>Subir archivo</button>
       </Modal>
     </div>
   );
