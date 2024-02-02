@@ -4,11 +4,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10rem;
+  height: 90px;
   padding: 0 2rem;
   
 }
-
+.ButtonAñadir{ 
+  display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
 
 .imgLogo {
   width: 180px;

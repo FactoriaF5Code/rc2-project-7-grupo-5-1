@@ -13,11 +13,16 @@ function Header() {
   };
   return (
     <header>
-      <div className="logo">
+      <div>
+      <div className="logo"/>
         <img className="imgLogo" src={Logo} alt="INFO CODER" />
-        <ButtonAñadir onOpenModal={handleOpenModal} />
+        </div>
+        <div className="ButtonAñadir">
+        <ButtonAñadir onOpenModal={handleOpenModal} className = "ButtonAñadir" />
+        <div/>
         <MyModal isOpen={isModalOpen} onCloseModal={handleCloseModal} />
       </div>
+
     </header>
   );
 }
