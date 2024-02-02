@@ -5,11 +5,11 @@ import "./Modal.css";
 import axios from "axios";
 
 function MyModal({ isOpen, onCloseModal }) {
-  const [description, setDescription] = useState("");
+  const [title, settitle] = useState("");
   const [link, setLink] = useState("");
 
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
+  const handletitleChange = (event) => {
+    settitle(event.target.value);
   };
 
   const handleLinkChange = (event) => {
@@ -36,7 +36,7 @@ function MyModal({ isOpen, onCloseModal }) {
     }
     try {
       const response = await axios.post("http://localhost:8080/urls", {
-        title: description,
+        title: title,
         url: link,
       });
       console.log(response.data);
@@ -56,10 +56,10 @@ function MyModal({ isOpen, onCloseModal }) {
         className="my-modal-class"
       >
         <input
-          id="description"
+          id="title"
           type="text"
-          placeholder="Descripción"
-          onChange={handleDescriptionChange}
+          placeholder="Titulo"
+          onChange={handletitleChange}
         />
 
         <input

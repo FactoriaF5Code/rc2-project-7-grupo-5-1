@@ -52,10 +52,4 @@ input {
   color: black;
   
 }
-#link::placeholder {
-  color: black;
-}
 
-#description::placeholder {
-  color: black;
-}
