@@ -4,11 +4,10 @@ import AddButton from "./Buttons/ButtonAñadir.jsx";
 import DeleteButton from "./Buttons/DeleteButton.jsx";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import MyModal from "./Modal/Modal.jsx";
 import Header from "./Header/Header.jsx";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+ 
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -26,13 +25,7 @@ function App() {
     fetchData();
   }, []);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+   
 
   const handleSubmit = (event) => {
     // Nueva función para manejar el envío del formulario
@@ -89,9 +82,8 @@ function App() {
     <>
       <Router>
         <Header />
-        <AddButton onOpenModal={handleOpenModal} />
-        <MyModal isOpen={isModalOpen} onCloseModal={handleCloseModal} />
-        {data.map((item, index) => (
+        
+               {data.map((item, index) => (
           <div className="barButtom" key={index}>
             <div className="url-container">
               <h2>{item.title}</h2>
