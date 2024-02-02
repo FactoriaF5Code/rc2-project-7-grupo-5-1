@@ -78,20 +78,20 @@ html, body {
 }
 
 .noselect .text {
+  color: transparent;
   transform: translateX(55px);
-  color: black;
   font-size: 15px;
 }
 
 .noselect .icon {
   position: absolute;
-  border-left: 1px solid #c41b1b;
-  transform: translateX(150px);
   height: 30px;
-  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 200px;
+  border-left: none;
+  transform: translateX(0);
   
 }
 
@@ -105,13 +105,13 @@ html, body {
 }
 
 .noselect:hover .text {
-  color: transparent;
+  color: black;
 }
 
 .noselect:hover .icon {
-  width: 200px;
-  border-left: none;
-  transform: translateX(0);
+  border-left: 1px solid #c41b1b;
+  transform: translateX(150px);
+  width: 50px;
 }
 
 .noselect:focus {

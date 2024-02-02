@@ -9,8 +9,8 @@ import Header from "./Header/Header.jsx";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState([]);
-  const [title, setTitle] = useState(""); 
-  const [url, setUrl] = useState(""); 
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -101,7 +101,8 @@ function App() {
               </p>
             </div>
             <div className="buton-delete">
-              <button className="noselect"
+              <button
+                className="noselect"
                 onClick={() => handleDelete(item.id)}
               >
                 <span className="text">Eliminar</span>
