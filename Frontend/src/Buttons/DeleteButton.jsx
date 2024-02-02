@@ -1,4 +1,4 @@
-
+import "./DeleteButton.css"
 const DeleteButton = ({handleDelete}) => {
   // Your component logic goes here
 
