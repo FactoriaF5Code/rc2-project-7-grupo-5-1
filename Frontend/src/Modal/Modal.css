@@ -46,7 +46,7 @@ input {
   border: none;
   border-radius: 5px;
   text-align: center;
-  font-family: Inter;
+  font-family: monospace;
   font-size: 15px;
   background: white;
   color: black;
