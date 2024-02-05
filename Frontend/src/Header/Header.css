@@ -26,3 +26,30 @@ header {
   gap: 70px;
   justify-content: space-between;
 }
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  border-radius: 1rem;
+  width: 100rem;
+  height: 4rem;
+  text-align: left;
+  padding-left: 50px;
+  text-transform: uppercase;
+  padding-right: 30px; 
+}
+.search-button {
+  position: absolute;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 15px;
+  width: 17px;
+  height: 17px;
+  
+}
