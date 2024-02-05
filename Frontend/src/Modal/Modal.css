@@ -37,7 +37,6 @@
   text-align: center;
   background: #1A8FDD;
   font-size: 15px;
-
 }
 
 input {
@@ -50,6 +49,36 @@ input {
   font-size: 15px;
   background: white;
   color: black;
-  
+}
+
+select {
+  width: 80%;
+  height: 42px;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+option[value="javascript"] {
+  background-color: yellow;
+}
+
+option[value="html-y-css"] {
+  background-color: blue;
+}
+
+option[value="java"] {
+  background-color: green;
+}
+
+option[value="git-y-github"] {
+  background-color: red;
+}
+
+.language {
+  font-family: monospace;
+  font-size: 15px;
 }
 

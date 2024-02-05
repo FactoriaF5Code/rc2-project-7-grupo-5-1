@@ -64,10 +64,20 @@ function MyModal({ isOpen, onCloseModal }) {
 
         <input
           id="link"
-          type="text" 
-          placeholder="Copia tu enlace" 
+          type="text"
+          placeholder="Copia tu enlace"
           onChange={handleLinkChange}
         />
+
+        <label className="language" for="language">Elige un lenguaje:</label>
+
+        <select id="language" name="language">
+          <option value="javascript">JavaScript</option>
+          <option value="html-y-css">HTML Y CSS</option>
+          <option value="java">JAVA</option>
+          <option value="git-y-github">GIT Y GITHUB</option>
+        </select>
+        
 
         <button className="button_modal" onClick={handleSubmit}>
           Subir archivo
