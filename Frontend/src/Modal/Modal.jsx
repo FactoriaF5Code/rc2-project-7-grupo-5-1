@@ -23,8 +23,8 @@ function MyModal({ isOpen, onCloseModal }) {
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       finalUrl = `https://${link}`;
     }
-    if (!link.endsWith('.com')) {
-      finalUrl = `${finalUrl}.com`;
+    if (!/\.[a-z]+/.test(link)) {
+      finalUrl += ".com";
     }
     try {
       const response = await axios.post("http://localhost:8080/urls", {
