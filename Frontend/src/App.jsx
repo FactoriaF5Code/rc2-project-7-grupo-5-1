@@ -11,12 +11,14 @@ function App() {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:8080/urls");
         setData(response.data);
+        setFilteredData(response.data); // Inicialmente, establecer los datos filtrados igual a todos los datos
       } catch (error) {
         console.error(error);
       }
@@ -24,6 +26,14 @@ function App() {
 
     fetchData();
   }, []);
+
+  const handleSearch = (searchTerm) => {
+    // Función de búsqueda que filtra los datos según el término de búsqueda
+    const filtered = data.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filtered);
+  };
 
    
 
@@ -81,9 +91,8 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
-        
-               {data.map((item, index) => (
+        <Header onSearch={handleSearch} /> {/* Pasar la función de búsqueda como prop */}
+        {filteredData.map((item, index) => (
           <div className="barButtom" key={index}>
             <div className="url-container">
               <h2>{item.title}</h2>
