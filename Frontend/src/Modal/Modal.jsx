@@ -7,6 +7,8 @@ import axios from "axios";
 function MyModal({ isOpen, onCloseModal }) {
   const [title, settitle] = useState("");
   const [link, setLink] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+
 
   const handletitleChange = (event) => {
     settitle(event.target.value);
@@ -37,6 +39,28 @@ function MyModal({ isOpen, onCloseModal }) {
     }
   };
 
+  const changeColor = (event) => {
+    const selectElement = event.target;
+    let value = selectElement.value;
+    setSelectedOption(value);
+    switch(value) {
+      case 'javascript':
+        selectElement.style.backgroundColor = 'yellow';
+        break;
+      case 'html-y-css':
+        selectElement.style.backgroundColor = 'blue';
+        break;
+      case 'java':
+        selectElement.style.backgroundColor = 'red';
+        break;
+      case 'git-y-github':
+        selectElement.style.backgroundColor = 'green';
+        break;
+      default:
+        selectElement.style.backgroundColor = 'white';
+    }
+  };
+
   return (
     <div>
       <Modal
@@ -50,6 +74,7 @@ function MyModal({ isOpen, onCloseModal }) {
           type="text"
           placeholder="Titulo"
           onChange={handletitleChange}
+          required
         />
 
         <input
@@ -57,11 +82,13 @@ function MyModal({ isOpen, onCloseModal }) {
           type="text"
           placeholder="Copia tu enlace"
           onChange={handleLinkChange}
+          required
         />
 
         <label className="language" for="language">Elige un lenguaje:</label>
 
-        <select id="language" name="language">
+        <select id="language" name="language" onChange={changeColor}>
+          <option value="">Selecciona una opcion</option>
           <option value="javascript">JavaScript</option>
           <option value="html-y-css">HTML Y CSS</option>
           <option value="java">JAVA</option>
@@ -70,7 +97,7 @@ function MyModal({ isOpen, onCloseModal }) {
         
         
 
-        <button className="button_modal" onClick={handleSubmit}>
+        <button className="button_modal" onClick={handleSubmit} disabled={selectedOption === "" || title === "" || link === ""}>
           Subir archivo
         </button>
       </Modal>
