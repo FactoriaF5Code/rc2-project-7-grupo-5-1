@@ -17,27 +17,17 @@ function MyModal({ isOpen, onCloseModal }) {
   };
 
   const handleSubmit = async () => {
-    const urlPattern = new RegExp(
-      "^(https?:\\/\\/)" + // protocol
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name and extension
-        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-        "(\\:\\d+)?" + // port
-        "(\\/[-a-z\\d%_.~+]*)*" + // path
-        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
-        "(\\#[-a-z\\d_]*)?$",
-      "i"
-    ); // fragment locator
-
-    if (!urlPattern.test(link)) {
-      alert(
-        "Por favor, introduce una URL válida que comience con http:// o https://"
-      );
-      return;
+    let finalUrl = link;
+    if (!link.startsWith('http://') && !link.startsWith('https://')) {
+      finalUrl = `https://${link}`;
+    }
+    if (!link.endsWith('.com')) {
+      finalUrl = `${finalUrl}.com`;
     }
     try {
       const response = await axios.post("http://localhost:8080/urls", {
         title: title,
-        url: link,
+        url: finalUrl,
       });
       console.log(response.data);
       onCloseModal();
@@ -77,6 +67,7 @@ function MyModal({ isOpen, onCloseModal }) {
           <option value="java">JAVA</option>
           <option value="git-y-github">GIT Y GITHUB</option>
         </select>
+        
         
 
         <button className="button_modal" onClick={handleSubmit}>

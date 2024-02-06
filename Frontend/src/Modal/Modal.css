@@ -67,6 +67,7 @@ option[value="javascript"] {
 
 option[value="html-y-css"] {
   background-color: blue;
+  color: white;
 }
 
 option[value="java"] {
@@ -75,6 +76,7 @@ option[value="java"] {
 
 option[value="git-y-github"] {
   background-color: red;
+  color: white;
 }
 
 .language {
