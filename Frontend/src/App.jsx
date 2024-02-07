@@ -5,6 +5,7 @@ import DeleteButton from "./Buttons/DeleteButton.jsx";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Header/Header.jsx";
+import Modal from "./Modal/Modal.jsx";
 
 function App() {
  
@@ -12,6 +13,7 @@ function App() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [selectedColor, setSelectedColor] = useState(""); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +30,6 @@ function App() {
   }, []);
 
   const handleSearch = (searchTerm) => {
-    // Función de búsqueda que filtra los datos según el término de búsqueda
     const filtered = data.filter((item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -38,7 +39,6 @@ function App() {
    
 
   const handleSubmit = (event) => {
-    // Nueva función para manejar el envío del formulario
     event.preventDefault();
 
     if (!title.trim() || !url.trim()) {
@@ -78,7 +78,7 @@ function App() {
     try {
       const response = await axios.delete(`http://localhost:8080/urls/${id}`);
       if (response.status === 200) {
-        setData(data.filter((item) => item.id !== id));
+        setFilteredData(filteredData.filter((item) => item.id !== id)); // Actualiza filteredData
       } else {
         alert("Hubo un error al eliminar los datos");
       }
@@ -87,13 +87,19 @@ function App() {
       alert("Hubo un error al eliminar los datos");
     }
   };
+  
+
+  const colorChange = (color) => {
+    setSelectedColor(color); 
+  };
 
   return (
     <>
       <Router>
-        <Header onSearch={handleSearch} /> {/* Pasar la función de búsqueda como prop */}
+        <Header onSearch={handleSearch} />
+        <Modal setSelectedColor={setSelectedColor} />
         {filteredData.map((item, index) => (
-          <div className="barButtom" key={index}>
+          <div className={`barButtom ${selectedColor}`} key={index}>
             <div className="url-container">
               <h2>{item.title}</h2>
               <p>

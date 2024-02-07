@@ -54,3 +54,19 @@ html, body {
   overflow: hidden;
 }
 
+.barButtom.red {
+  background-color: red;
+}
+
+.barButtom.blue {
+  background-color: blue;
+}
+
+.barButtom.green {
+  background-color: green;
+}
+
+.barButtom.yellow {
+  background-color: yellow;
+}
+

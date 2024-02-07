@@ -4,7 +4,7 @@ import "./Modal.css";
 
 import axios from "axios";
 
-function MyModal({ isOpen, onCloseModal }) {
+function MyModal({ isOpen, onCloseModal, setSelectedColor }) {
   const [title, settitle] = useState("");
   const [link, setLink] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
@@ -59,6 +59,8 @@ function MyModal({ isOpen, onCloseModal }) {
       default:
         selectElement.style.backgroundColor = 'white';
     }
+    selectElement.style.backgroundColor = color;
+    setSelectedColor(color);
   };
 
   return (
